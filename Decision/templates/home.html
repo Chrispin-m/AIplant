@@ -1,0 +1,36 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="input-section">
+  <h2>Predict Disease</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="image">Select or capture an image:</label>
+      <input type="file" accept="image/*" capture="camera" class="form-control-file" id="image" name="image">
+    </div>
+    <button class="btn" type="submit">Predict</button>
+  </form>
+
+  <div id="captured-image" style="display:none;">
+    <h2>Selected Image</h2>
+    <img id="selected-img" src="" alt="Selected Image">
+  </div>
+</div>
+
+<script>
+  // When the user selects or captures an image, display it in the preview section
+  const imageInput = document.getElementById('image');
+  const selectedImage = document.getElementById('selected-img');
+  imageInput.addEventListener('change', () => {
+    const file = imageInput.files[0];
+    const reader = new FileReader();
+    reader.addEventListener('load', () => {
+      selectedImage.src = reader.result;
+      selectedImage.style.display = 'block';
+    });
+    reader.readAsDataURL(file);
+  });
+</script>
+{% endblock %}

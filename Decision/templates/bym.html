@@ -1,0 +1,23 @@
+<html>
+
+  <body>
+    <h1>IOT-BASED CROP PEST AND DISEASE DETECTION IN MAIZE PLANTS</h1>
+    <div class="input-section">
+      <h2>Input Section</h2>
+      <p>Take a picture</p>
+      <button class="btn">Take Picture</button>
+      <br><br>
+      <p>Upload a picture</p>
+      <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class = "btn" type="submit">Predict</button>
+      </form>
+    </div>
+    <div class="output-section">
+      <h2>Output Section</h2>
+      <p>Disease: <input type="text" value="None"></p>
+      <p>Recommendations: <input type="text" value="None"></p>
+    </div>
+  </body>
+</html>

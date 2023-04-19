@@ -1,0 +1,11 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Predict Disease</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class ="btn" type="submit">Predict</button>
+  </form>
+{% endblock %}

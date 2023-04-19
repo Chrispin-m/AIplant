@@ -1,0 +1,25 @@
+<!-- templates/result.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="input-section">
+
+      <p>.............</p>
+    <div id="hidden-paragraph" class="hidden">
+      <p>Based on the output of trainer code, the model was trained on a dataset consisting of 1001 images belonging to 13 classes. The model was trained for 20 epochs, and the training process seems to have gone smoothly without any errors.
+
+    <p>The accuracy of the model during training seems to have improved gradually over the 20 epochs, starting from a low of 21.16% in the first epoch and improving to 63.57% in the 16th epoch. The validation accuracy of the model also improved over time, with the highest value being 67.74% in the 16th epoch.
+    </p>
+    <p>Overall, the model appears to have achieved a reasonable level of accuracy during training and validation, with the highest validation accuracy being 67.74%.</p>
+     </p>  </div>
+    <button onclick="toggleVisibility()">Read More</button>
+
+  <h2>Result</h2>
+  <p>Disease: <input type="text" value= "{{ disease }}" ></p>
+    <p>Recommendation: {{ recommendation }} </p>
+</div>
+
+{% endblock %}
+
+
+
