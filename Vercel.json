@@ -1,15 +1,13 @@
 {
     "builds": [{
-        "src": "AIplant/wsgi.py
-",
+        "src": "AIplant/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
     }],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "AIplant/wsgi.py
-"
+            "dest": "AIplant/wsgi.py"
         }
     ]
 }
